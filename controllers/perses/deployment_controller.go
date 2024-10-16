@@ -176,7 +176,7 @@ func (r *PersesReconciler) createPersesDeployment(
 							},
 							{
 								Name:      "data",
-								MountPath: "/perses",
+								MountPath: "/data",
 							},
 						},
 						Args: []string{"--config=/etc/perses/config/config.yaml"},
