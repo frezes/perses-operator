@@ -1,0 +1,38 @@
+# model.Duration(int64) => string(format: duration)
+
+# spec.config.ephemeral_dashboard.cleanup_interval
+- op: replace
+  path: /spec/versions/0/schema/openAPIV3Schema/properties/spec/properties/config/properties/ephemeral_dashboard/properties/cleanup_interval/type
+  value: string
+- op: replace
+  path: /spec/versions/0/schema/openAPIV3Schema/properties/spec/properties/config/properties/ephemeral_dashboard/properties/cleanup_interval/format
+  value: duration
+
+# spec.config.ephemeral_dashboards_cleanup_interval
+- op: replace
+  path: /spec/versions/0/schema/openAPIV3Schema/properties/spec/properties/config/properties/ephemeral_dashboards_cleanup_interval/type
+  value: string
+- op: replace
+  path: /spec/versions/0/schema/openAPIV3Schema/properties/spec/properties/config/properties/ephemeral_dashboards_cleanup_interval/format
+  value: duration
+
+# spec.config.frontend.important_dashboards[].refresh_interval
+- op: replace
+  path: /spec/versions/0/schema/openAPIV3Schema/properties/spec/properties/config/properties/global_datasource_discovery/items/properties/refresh_interval/type
+  value: string
+- op: replace
+  path: /spec/versions/0/schema/openAPIV3Schema/properties/spec/properties/config/properties/global_datasource_discovery/items/properties/refresh_interval/format
+  value: duration
+
+# spec.config.provisioning.interval
+- op: replace
+  path: /spec/versions/0/schema/openAPIV3Schema/properties/spec/properties/config/properties/provisioning/properties/interval/type
+  value: string
+- op: replace
+  path: /spec/versions/0/schema/openAPIV3Schema/properties/spec/properties/config/properties/provisioning/properties/interval/format
+  value: duration
+
+# spec.config.security.cookie.same_site 
+- op: replace
+  path: /spec/versions/0/schema/openAPIV3Schema/properties/spec/properties/config/properties/security/properties/cookie/properties/same_site/type
+  value: string

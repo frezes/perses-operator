@@ -172,10 +172,14 @@ func (r *PersesReconciler) createPersesDeployment(
 							{
 								Name:      "config",
 								ReadOnly:  true,
-								MountPath: "/perses/config",
+								MountPath: "/etc/perses/config",
+							},
+							{
+								Name:      "data",
+								MountPath: "/perses",
 							},
 						},
-						Args: []string{"--config=/perses/config/config.yaml"},
+						Args: []string{"--config=/etc/perses/config/config.yaml"},
 					}},
 					Volumes: []corev1.Volume{
 						{
@@ -187,6 +191,12 @@ func (r *PersesReconciler) createPersesDeployment(
 									},
 									DefaultMode: &[]int32{420}[0],
 								},
+							},
+						},
+						{
+							Name: "data",
+							VolumeSource: corev1.VolumeSource{
+								EmptyDir: &corev1.EmptyDirVolumeSource{},
 							},
 						},
 						// {

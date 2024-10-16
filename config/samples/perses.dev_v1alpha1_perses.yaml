@@ -10,9 +10,16 @@ metadata:
   name: perses-sample
 spec:
   config:
+    security:
+      readonly: false
+      enable_auth: false
+      cookie:
+        secure: false
+        same_site: lax
+
     database:
       file:
-        extension: yaml
+        extension: json
         folder: /perses
 
     schemas:
